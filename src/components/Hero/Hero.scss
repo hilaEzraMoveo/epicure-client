@@ -1,0 +1,83 @@
+@import '../../styles/mixin.scss';
+
+.hero {
+    background-image: url('../../assets/images/background.svg'); 
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 273px; 
+    padding: 20px; 
+  }
+  
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .hero-content-container{
+        background: #FFFFFFE0;
+
+        .hero-text {
+            color: #000000;
+            font-size: 24px;
+            margin-bottom: 20px; 
+            font-family: Helvetica Neue;
+            font-size: 23px;
+            font-weight: 200;
+            line-height: 32px;
+            letter-spacing: 1.9700000286102295px;
+            text-align: left;
+            width: 315px;
+            height: 64px;
+            text-align: center;
+          }
+          
+          .search-bar {
+            width: Fixed (315px);
+            height: Fixed (30px);
+            margin-bottom: 10px;
+            padding: 6px, 12px, 6px, 12px;
+            border-radius: 4px;
+            border: 0.5px;
+            gap: 8px;
+            border: 0.5px solid #000000;
+
+            .search-bar input[type="text"] {
+                width: 253px;
+                height: 15px;
+                font-family: Helvetica Neue;
+                font-size: 12px;
+                font-weight: 200;
+                line-height: 15px;
+                letter-spacing: 1.2899999618530273px;
+                text-align: left;
+                background: #000000;
+
+                // padding: 10px; // Add padding to input field
+                // margin-right: 10px; // Add margin to create space between input field and button
+                // width: Fill (263px);
+                // height: Hug (38px);
+              }
+
+              .search-bar button {
+                // padding: 10px 20px; // Add padding to button
+                // color: white; // Set button text color
+                 border: none; // Remove button border
+                 cursor: pointer; // Set cursor to pointer on hover
+    
+                .search-bar button img {
+                    //width: 10px; // Adjust image width as needed
+                    width: 20px;
+                    height: 20px;
+                    color: #000000;
+
+                  }
+              }
+          }
+    }
+  }
+  
+  
+  

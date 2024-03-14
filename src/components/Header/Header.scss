@@ -1,0 +1,83 @@
+@import '../../styles/mixin.scss';
+
+
+.header{
+    @include font-style;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+    .hamburger-menu{
+        cursor: pointer;
+        @include desktop{
+            display: none;
+        }
+    }
+
+    .epicure-logo {
+        display: inline-block;
+        width: 40px; 
+    }
+
+    .epicure-logo-2 {
+        display: none;
+        @include desktop {
+            display: inline-block;
+            color: hsl(0, 0%, 2%); 
+            text-decoration: none; 
+            padding: 5px 10px; 
+
+        }
+    }
+
+    .navbar-links {
+
+        display: none;
+        @include desktop{
+            position: static; 
+            display: flex; 
+            align-items: center;
+            z-index: 10;
+            padding: 10px 0; 
+            margin-right: 500px;
+    
+            a {
+                color: hsl(0, 0%, 2%); 
+                text-decoration: none; 
+                padding: 5px 10px; 
+                &:hover {
+                    background-color: #ddd;
+                }
+            }
+        }
+
+        &.open {
+            @include mobile { 
+                display: flex;
+                position: absolute; /* Position menu absolutely when open on desktop */
+                top: calc(100% + 10px); /* Position menu below header with some spacing */
+                left: 0;
+                right: 0;
+                background-color: #1376d9; /* Background color */
+                padding: 10px 0; /* Add padding for better spacing */
+                flex-direction: row; /* Stack links horizontally */
+                justify-content: space-between; /* Adjust spacing between links on desktop */
+                width: auto; /* Auto width on desktop */
+            }
+        }
+    }
+
+    .navbar-icons {
+        display: flex;
+        align-items: center;
+        img {
+            margin-right: 10px; 
+            cursor: pointer;
+
+            &:hover {
+                background-color: #ddd;
+            }
+        }
+    }
+}
