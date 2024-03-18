@@ -33,18 +33,15 @@ const Header = () => {
       <header className="header"> 
   
           <img className="hamburger-menu" src={HamburgerLogo} alt="menu" onClick={toggleMenu}></img>
-          <div>
+          <div className='logo-and-links-container'>
             <img className="epicure-logo" src={PlateLogo} alt="epicure"></img>
             <img className="epicure-logo-2" src={EpicureLogoHeader} alt="logo"></img>
-          </div>
-
-
-          <div className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>     
+            <div className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>     
                 <Link to='/' onClick={() => handleLinkClick("/")}>Restaurants</Link>
                 <Link to='/' onClick={() => handleLinkClick("/")}>Chefs</Link>
+            </div>
           </div>
 
-  
           <div className="navbar-icons">
             <img className="search-logo" src={SearchLogo} alt="search" onClick={() => handleLinkClick("/")}></img>
             <img className="user-logo" src={UserLogo} alt="user" onClick={() => handleLinkClick("/")}></img>

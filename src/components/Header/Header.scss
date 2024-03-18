@@ -2,7 +2,12 @@
 
 
 .header{
-    @include font-style;
+    font-family: "Helvetica Neue";
+    color: black;
+    line-height: normal;
+    font-weight: 200;
+    font-style: normal;
+    margin: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,6 +20,10 @@
         }
     }
 
+    .logo-and-links-container{
+        display: flex;
+    }
+
     .epicure-logo {
         display: inline-block;
         width: 40px; 
@@ -23,10 +32,13 @@
     .epicure-logo-2 {
         display: none;
         @include desktop {
-            display: inline-block;
+            display: inline-block; // Make sure the logo is displayed
+            margin-right: 20px; // Add some space between logo and links
+            // display: inline-block;
             color: hsl(0, 0%, 2%); 
             text-decoration: none; 
             padding: 5px 10px; 
+
 
         }
     }
@@ -40,8 +52,8 @@
             align-items: center;
             z-index: 10;
             padding: 10px 0; 
-            margin-right: 500px;
-    
+            //margin-right: 500px;
+            margin-right: 0;
             a {
                 color: hsl(0, 0%, 2%); 
                 text-decoration: none; 

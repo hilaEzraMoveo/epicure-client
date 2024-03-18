@@ -54,6 +54,24 @@
               height: 127px;
             }
 
+            .icon-content {
+              position: relative;
+            }
+          
+            .icon-content:hover .image {
+                transform: rotate(360deg);
+                transition: transform 0.5s ease;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+            }
+
+            .icon-content .name {
+              transition: transform 0.5s ease; 
+            }
+          
+            .icon-content:hover .name {
+              transform: scale(1.1); 
+            }
+
             .image{
                 @include desktop {
                     width: 76.948px;

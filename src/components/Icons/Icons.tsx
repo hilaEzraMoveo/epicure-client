@@ -1,5 +1,6 @@
-import './Icons.scss'
-import iconData from '../../constants/IconData'
+import './Icons.scss';
+import iconData from '../../constants/IconData';
+import {Fade} from 'react-awesome-reveal';
 
 const Icons = () => {
 
@@ -11,8 +12,12 @@ const Icons = () => {
             <div className='icons'>
                 {icons.map((icon) => (
                     <div className='icon' key={icon.name}>
-                        <img className='image' alt='Icon' src={icon.img} />
-                        <h3 className='name'>{icon.name}</h3>
+                        <Fade triggerOnce>
+                            <div className='icon-content'>
+                                <img className='image' alt='Icon' src={icon.img} />
+                                <h3 className='name'>{icon.name}</h3>
+                            </div>
+                        </Fade>
                     </div>
                 ))}
             </div>
