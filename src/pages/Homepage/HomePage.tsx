@@ -6,6 +6,8 @@ import Hero from '../../components/Hero/Hero';
 import AboutUs from '../../components/AboutUs/AboutUs';
 import Icons from '../../components/Icons/Icons';
 import Restaurants from '../../components/Card/Restaurants/Restaurants';
+import Dishes from '../../components/Card/Dishes/Dishes';
+import ChefOfTheWeek from '../../components/ChefOfTheWeek/ChefOfTheWeek';
 
 
 
@@ -16,7 +18,9 @@ const HomePage = () => {
             <Header/>    
             <Hero/> 
             <Restaurants/> 
+            <Dishes/>
             <Icons/> 
+            <ChefOfTheWeek/>
             <AboutUs/> 
             <Footer/>       
         </div>

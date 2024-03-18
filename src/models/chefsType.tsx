@@ -1,8 +1,8 @@
+import { CardProps } from "./cardProp";
 
 export type Chef = {
     name: string;
-    img: string; 
-    information: string;
-    resteraunts: string[]; 
-
+    image: string; 
+    description: string;
+    resteraunts: CardProps[]; 
 }
