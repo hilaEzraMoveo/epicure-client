@@ -1,0 +1,12 @@
+import {Chef} from '../models/chefsType';
+import YossiShitritImage from '../assets/images/chefs/yossiShitrit.svg';
+import ChefOfTheWeekRestaurant from './ChefOfTheWeekRestaurant';
+
+const ChefOfTheWeekData: Chef = {
+    name: 'Yossi Shitrit',
+    image: YossiShitritImage,
+    description:'Chef Yossi Shitrit has been living and breathing his culinary dreams for more than two decades, including running the kitchen in his first restaurant, the fondly-remembered Violet, located in Moshav  Udim. Shitrit`s creativity and culinary  acumen born of long experience  are expressed in the every detail of each and every dish.',
+    resteraunts: ChefOfTheWeekRestaurant
+}
+
+export default ChefOfTheWeekData;
