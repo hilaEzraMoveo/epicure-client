@@ -1,78 +1,81 @@
-@import '../../styles/mixin.scss';
+@import "../../styles/mixin.scss";
 
 .hero {
-    background-image: url('../../assets/images/background.svg'); 
-    background-size: cover;
-    background-position: center;
-    color: white;
-    height: 273px; 
-    padding: 20px; 
+  background-image: url("../../assets/images/background.svg");
+  background-size: cover;
+  background-position: center;
+  height: 273px;
+  padding: 20px;
+  @include desktop {
+    height: 500px;
   }
-  
-  .hero-content {
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .hero-content-container {
     display: flex;
     flex-direction: column;
+    background-color: #ffffffe0;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    width: 360px;
+    height: 150px;
 
-    .hero-content-container{
-        background: #FFFFFFE0;
+    @include desktop {
+      width: 450px;
+      height: 150px;
+    }
 
-        .hero-text {
-            color: #000000;
-            font-size: 24px;
-            margin-bottom: 20px; 
-            font-family: Helvetica Neue;
-            font-size: 23px;
-            font-weight: 200;
-            line-height: 32px;
-            letter-spacing: 1.9700000286102295px;
-            text-align: left;
-            width: 315px;
-            height: 64px;
-            text-align: center;
-          }
-          
-          .search-bar {
-            display: flex;
-            position: relative;
-            width: Fixed (315px);
-            height: Fixed (30px);
-            margin-bottom: 10px;
-            padding: 6px, 12px, 6px, 12px;
-            border-radius: 4px;
-            border: 0.5px;
-            gap: 8px;
+    .hero-text {
+      color: #000000;
+      font-size: 24px;
+      margin-bottom: 15px;
+      font-family: Helvetica Neue;
+      font-weight: 200;
+      line-height: 32px;
+      letter-spacing: 1.9700000286102295px;
+      text-align: center;
+    }
 
-            input[type="text"] {
-                flex: 1; 
-                width: 276px;
-                height: 15px;
-                font-family: Helvetica Neue;
-                font-size: 12px;
-                font-weight: 200;
-                line-height: 15px;
-                letter-spacing: 1.2899999618530273px;
-                text-align: left;
-                background: #000000;
-              }
+    .search-bar {
+      display: flex;
+      flex-direction: row;
+      border: 1px solid #000000;
+      width: 350px;
+      justify-content: center;
+      border-radius: 4px;
 
-               button {
-                position: absolute;
-                 border: none;
-                 cursor: pointer; 
-    
-                 img {
-                    width: 20px;
-                    height: 20px;
-                    color: #000000;
+      input[type="text"] {
+        width: 276px;
+        height: 35px;
+        font-family: Helvetica Neue;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 15px;
+        letter-spacing: 1.2899999618530273px;
+        text-align: left;
+        margin-left: 15px;
+        border: none;
+        background-color: inherit;
+      }
 
-                  }
-              }
-          }
+      button {
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+
+        img {
+          width: 25px;
+          height: 22px;
+          color: #000000;
+        }
+      }
     }
   }
-  
-  
-  
+}

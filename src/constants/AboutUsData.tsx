@@ -10,15 +10,14 @@ const AboutUsData: AboutUsDataType = {
     contentTwo: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum bibendum noeu ipsum. Cras porta malesuada eros.',
     appsButtons: [
         {
-            logo: GooglePlayLogo,
-            contentOne:'Get it on',
-            contentTwo: 'Google Play'
-
-        },
-        {
             logo: AppleLogo,
             contentOne:'Download on the',
             contentTwo: 'App Store'
+        },
+        {
+            logo: GooglePlayLogo,
+            contentOne:'Get it on',
+            contentTwo: 'Google Play'
         }
     ]
 }

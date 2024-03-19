@@ -9,10 +9,12 @@ const AboutUs = () => {
             <div className='buttons-and-about-us'>
                 <div className='apps-buttons'>
                     {AboutUsData.appsButtons.map((button, index) => (
-                        <button key={index}>
-                        <img src={button.logo} alt={button.contentOne} />
-                        <span>{button.contentOne}</span>
-                        <span>{button.contentTwo}</span>
+                        <button className='app-button' key={index}>
+                            <img src={button.logo} alt={button.contentOne} />
+                            <div className='button-content-container'>
+                                <span className='button-content-one'>{button.contentOne} </span>
+                                <span className='button-content-two'>{button.contentTwo}</span>
+                            </div>
                         </button>
                     ))}
                 </div>
