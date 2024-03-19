@@ -42,17 +42,49 @@
             margin-top: 32px;
             gap: 16px;
             @include desktop {
-            //   display: flex;
-            //   flex-direction: row-reverse;
-            //   justify-content: flex-end;
             width: Hug (180px);
             height: Hug (52px);
             padding: 7px, 12px, 7px, 12px;
-            border-radius: 10px;
-            border: 0.5px;
             gap: 7px;
-            border: 0.5px solid #000000;
+            flex-direction: row;
             }
+
+            .app-button {
+                width: 180px;
+                display: flex;
+                align-items: center;
+                border-radius: 10px;
+            }
+
+            img{
+                margin: 10px 10px 10px 10px;
+                width: 25px;
+            }
+
+            .button-content-container{
+                display: flex;
+                flex-direction: column;
+                width: 130px;
+
+                .button-content-one{
+                    font-family: Helvetica Neue;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 18px;
+                    letter-spacing: 1.2899999618530273px;
+                }
+    
+                .button-content-two{
+                    font-family: Helvetica Neue;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 18px;
+                    letter-spacing: 1.2899999618530273px;
+                }
+
+            }
+
+
         }
     
         .about-us-content-container{

@@ -8,42 +8,20 @@
     box-sizing: border-box;
 
     .swiper {
-        
         .swiper-slide {
-          max-width: fit-content;
-        }
-        .swiper-button-prev {
-            color: blue;
-        }
-        .swiper-button-next {
-            color: blue;
-        }
-        @include desktop {
-            .swiper-button-prev,
-            .swiper-button-next {
-                display: none; 
-            }
-            .swiper-pagination {
-                display: none; 
-            }
+          //max-width: fit-content;
         }
       }
 
     @include desktop {
       gap: 30px;
-      padding-left: 0;
-      padding-top: 10px;
+      padding: 40px 132px;
       display: flex;
       flex-direction: column;
       align-items: center;
 
       .swiper {
         width: 100%;
-        max-width: 1185px;
-
-        .swiper-slide {
-          max-width: fit-content;
-        }
       }
     }
 
@@ -97,7 +75,7 @@
         margin-top: 18.2px;
         @include desktop {
           width: 100%;
-          max-width: 1185px;
+          //max-width: 1185px;
           margin-top: 0;
           justify-content: flex-end;
         }
