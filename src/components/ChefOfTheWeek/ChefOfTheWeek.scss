@@ -18,7 +18,7 @@
     align-items: left;
     justify-content: center;
     padding: 40px 132px;
-    gap: 40px;
+    gap: 25px;
 
     .swiper {
       width: 100%;
@@ -39,9 +39,10 @@
     text-transform: uppercase;
     font-weight: 400;
     @include desktop {
-      height: 80px;
+      //height: 80px;
       font-size: 25px;
-      margin-top: 3%;
+      margin-top: 2%;
+      margin-bottom: 1%;
     }
   }
 
@@ -64,7 +65,8 @@
       align-items: flex-end;
       @include desktop {
         min-width: 400px;
-        min-height: 400px;
+        //font-size: 1.667vw;
+        //min-height: 400px;
       }
 
       .chef-image {
@@ -92,6 +94,7 @@
         @include desktop {
           height: 78px;
           font-size: 40px;
+          margin-top: -77px;
         }
       }
     }
@@ -103,8 +106,10 @@
       font-size: 18px;
       letter-spacing: 1.25px;
       @include desktop {
-        font-size: 24px;
-        line-height: 35px;
+        font-size: 27px;
+        width: 1050px;
+        letter-spacing: 1.8px;
+        line-height: 45px;
         margin: 0;
       }
     }
