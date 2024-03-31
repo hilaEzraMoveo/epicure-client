@@ -2,6 +2,8 @@ import React from 'react'
 import './ChefOfTheWeek.scss';
 import ChefOfTheWeekData from '../../constants/ChefOfTheWeekData';
 import Card from '../Card/Card';
+import allRestaurantsIcon from '../../assets/images/restaurants/allRestaurantIcon.svg';
+
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -28,8 +30,6 @@ const ChefOfTheWeek = () => {
                 initialSlide={0}
                 spaceBetween={24}
                 slidesPerView={1.4}
-                navigation
-                pagination
                 loop={true}
                 coverflowEffect={{
                   rotate: 50,
@@ -41,9 +41,8 @@ const ChefOfTheWeek = () => {
                 breakpoints={{
                   900: {
                     autoplay: false,
-                    spaceBetween: 24,
-                    //slidesPerView: "auto",
-                    slidesPerView: 1.4,
+                    // spaceBetween: 24,
+                    slidesPerView: 3,
                     touchRatio: 0
                   },
                 }}
@@ -57,8 +56,14 @@ const ChefOfTheWeek = () => {
                 ))}
                 </div>
             </Swiper>
+
+            <div className='all-restaurants'>
+              <span className='all-restaurants-text'>All Restaurants</span>
+              <img src={allRestaurantsIcon} alt='All Restaurants' className='arrows-icon' />
+            </div>
         </div>
-    </div>
+      </div>
+
   )
 }
 

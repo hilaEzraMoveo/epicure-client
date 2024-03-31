@@ -12,6 +12,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    @include desktop{
+        padding: 0px 132px;
+    }
 
     .hamburger-menu{
         cursor: pointer;
@@ -32,9 +35,9 @@
     .epicure-logo-2 {
         display: none;
         @include desktop {
-            display: inline-block; // Make sure the logo is displayed
-            margin-right: 20px; // Add some space between logo and links
-            // display: inline-block;
+            display: inline-block;
+            margin-right: 20px; 
+            margin-left: 10px;
             color: hsl(0, 0%, 2%); 
             text-decoration: none; 
             padding: 5px 10px; 
@@ -83,6 +86,7 @@
     .navbar-icons {
         display: flex;
         align-items: center;
+        gap:20px;
         img {
             margin-right: 10px; 
             cursor: pointer;

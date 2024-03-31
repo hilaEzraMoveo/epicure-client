@@ -9,21 +9,7 @@
   .swiper {
     .swiper-slide {
       max-width: fit-content;
-    }
-    .swiper-button-prev {
-        color: blue;
-    }
-    .swiper-button-next {
-        color: blue;
-    }
-    @include desktop {
-        .swiper-button-prev,
-        .swiper-button-next {
-            display: none; 
-        }
-        .swiper-pagination {
-            display: none; 
-        }
+      height: auto;
     }
   }
   @include desktop {
@@ -31,15 +17,16 @@
     flex-direction: column;
     align-items: left;
     justify-content: center;
-    padding: 0;
-    gap: 40px;
+    padding: 40px 132px;
+    gap: 25px;
 
     .swiper {
       width: 100%;
       max-width: 1185px;
-
+      margin: 0;
       .swiper-slide {
-        max-width: fit-content;
+        //max-width: fit-content;
+        max-width: 200px;
       }
     }
   }
@@ -50,16 +37,19 @@
     line-height: 35px;
     letter-spacing: 1.25px;
     text-transform: uppercase;
-    margin: 30px 0 17px 0;
+    font-weight: 400;
     @include desktop {
-      font-size: 30px;
-      margin: 30px 0 17px 0;
+      //height: 80px;
+      font-size: 25px;
+      margin-top: 2%;
+      margin-bottom: 1%;
     }
   }
 
   .image-and-description-container {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
     @include desktop {
       display: flex;
       flex-direction: row;
@@ -68,95 +58,125 @@
     }
 
     .chef-image-container {
-
       position: relative;
       display: flex;
       flex-direction: column;
       background-size: cover;
       align-items: flex-end;
-      width: 335px;
-      height: 262px;
       @include desktop {
-        min-width: 478px;
-        min-height: 400px;
+        min-width: 400px;
+        //font-size: 1.667vw;
+        //min-height: 400px;
       }
 
       .chef-image {
-        width: 400px; 
+        width: 100%;
         height: auto;
+        max-width: 400px;
+        margin: 0 auto;
       }
 
       .chef-name {
-
         @include font-style;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 400px;
+        width: 100%;
         height: 47px;
         font-size: 18px;
         font-weight: 400;
         line-height: 47px;
         letter-spacing: 2.67px;
         background: rgba(240, 234, 234, 0.955);
+        max-width: 400px;
+        margin: 0 auto;
         @include desktop {
           height: 78px;
           font-size: 40px;
+          margin-top: -77px;
         }
       }
     }
     .chef-description {
       @include font-style;
       text-align: justify;
-      margin-top: 160px;
       margin-bottom: 20px;
       line-height: 28px;
       font-size: 18px;
       letter-spacing: 1.25px;
       @include desktop {
-        font-size: 24px;
-        line-height: 35px;
+        font-size: 27px;
+        width: 1050px;
+        letter-spacing: 1.8px;
+        line-height: 45px;
         margin: 0;
       }
     }
   }
 
-  .chef-restaurants-container{
-
-    .chef-restaurant-name{
-        font-family: "Helvetica Neue";
-        color: black;
-        line-height: normal;
-        font-weight: 200;
-        font-style: normal;
-        font-size: 25px;
-        margin: 0px;
-        text-align: left;
-        margin-bottom: 10px;
-        @include desktop{
-            text-align: left;
-        }
+  .chef-restaurants-container {
+    .chef-restaurant-name {
+      font-family: "Helvetica Neue";
+      color: black;
+      line-height: normal;
+      font-weight: 200;
+      font-style: normal;
+      font-size: 25px;
+      margin: 0px;
+      text-align: left;
+      margin-bottom: 10px;
+      @include desktop {
+        margin-bottom: 25px;
+        margin-top: 10px;
+      }
     }
 
-    .chef-restaurants{
+    .chef-restaurants {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      align-items: flex-start;
+      gap: 20px;
+
+      @include desktop {
+        gap: 40px;
+        padding-left: 8%;
         display: flex;
         flex-direction: row;
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-        align-items: flex-start;
-        gap: 20px;
-    
-        @include desktop {
-          gap: 40px;
-          padding-left: 8%;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          text-align: center;
-          cursor: pointer;
-        }
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
       }
+    }
+  }
+
+  .all-restaurants {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 12px;
+    margin-top: 20px;
+    @include desktop {
+      display: none;
+    }
+
+    .all-restaurants-text {
+      @include font-style;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 35px;
+      letter-spacing: 2px;
+      text-transform: capitalize;
+    }
+
+    .arrows-icon {
+      cursor: pointer;
+      width: 24px;
+      height: 17.999px;
+    }
   }
 }
