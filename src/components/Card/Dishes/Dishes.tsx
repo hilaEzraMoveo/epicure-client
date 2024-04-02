@@ -1,8 +1,9 @@
 import React from "react";
 import "./Dishes.scss";
 import Card from "../Card";
-import DishesData from "../../../constants/DishesData";
 import Ils from "../../../assets/images/dishes/ils.svg";
+import IconData from "../../../constants/IconData";
+import { useFetchAllDishes } from "../../../services/dishes.service";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -17,6 +18,9 @@ import {
 } from "swiper/modules";
 
 const Dishes = () => {
+  const dishesList = useFetchAllDishes();
+  //console.log(dishesList);
+
   return (
     <div className="dishes-container">
       <p className="dishes-title">signature dish of:</p>
@@ -51,7 +55,7 @@ const Dishes = () => {
         watchOverflow={true}
       >
         <div className="dishes-cards">
-          {DishesData.map((dish, index) => (
+          {dishesList?.dishes.map((dish, index) => (
             <SwiperSlide className="swiper-slide" key={index}>
               <Card
                 title={dish.title}
@@ -60,10 +64,26 @@ const Dishes = () => {
                 bottomComponent={
                   <div className="description-icon-price">
                     {dish.foodIcons &&
-                      dish.foodIcons.map((icon, index) => (
-                        <img className="icon-image" src={icon} />
-                      ))}
-                    <h3 className="dish-description">{dish.description}</h3>
+                      dish.foodIcons.map((icon, index) => {
+                        const iconData = IconData.find(
+                          (data) => data.name === icon
+                        );
+                        if (iconData) {
+                          return (
+                            <img
+                              className="icon-image"
+                              src={iconData.img}
+                              key={index}
+                            />
+                          );
+                        }
+                        return null;
+                      })}
+                    <h3 className="dish-description">
+                      {Array.isArray(dish.description)
+                        ? dish.description.join(", ")
+                        : dish.description}{" "}
+                    </h3>
                     <div className="card-price">
                       <div className="line"></div>
                       <div className="value-logo-container">

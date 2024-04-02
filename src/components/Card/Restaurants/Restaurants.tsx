@@ -1,8 +1,9 @@
+import { useState } from "react";
 import "./Restaurants.scss";
-import RestaurantsData from "../../../constants/RestaurantsData";
 import Card from "../Card";
 import allRestaurantsIcon from "../../../assets/images/restaurants/allRestaurantIcon.svg";
-
+import { useFetchAllRestaurants } from "../../../services/restaurant.service";
+import Stars from "../../../constants/Stars";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -16,6 +17,24 @@ import {
 } from "swiper/modules";
 
 const Restaurants = () => {
+  const [page, setPage] = useState(1);
+  const [limit] = useState(3);
+  const [totalPages] = useState(2);
+  let { restaurants } = useFetchAllRestaurants(page, limit);
+  console.log(restaurants);
+
+  const handleNextPage = () => {
+    if (page < totalPages) {
+      setPage(page + 1);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (page > 1) {
+      setPage(page - 1);
+    }
+  };
+
   return (
     <div className="restaurants-container">
       <p className="restaurants-title">popular restaurant in epicure:</p>
@@ -50,19 +69,37 @@ const Restaurants = () => {
         watchOverflow={true}
       >
         <div className="restaurant-cards">
-          {RestaurantsData.map((restaurant, index) => (
+          {restaurants.map((restaurant, index) => (
             <SwiperSlide className="swiper-slide" key={index}>
               <Card
                 title={restaurant.title}
                 image={restaurant.image}
                 bottomComponent={
                   <div>
-                    <h2 className="chef-name">{restaurant.chefName}</h2>
-                    <img
-                      className="stars-rating"
-                      alt="stars"
-                      src={restaurant.rating}
-                    />
+                    <h2 className="chef-name">
+                      {" "}
+                      {Array.isArray(restaurant.chefName) &&
+                      restaurant.chefName.length > 0
+                        ? restaurant.chefName[0]?.title
+                        : "Unknown Chef"}
+                    </h2>
+                    {restaurant.rating && (
+                      <>
+                        {Stars.map((star, starIndex) => {
+                          if (star.number === restaurant.rating) {
+                            return (
+                              <img
+                                className="stars-rating"
+                                key={starIndex}
+                                src={star.img}
+                                alt={`${restaurant.rating} Stars`}
+                              />
+                            );
+                          }
+                          return null;
+                        })}
+                      </>
+                    )}
                   </div>
                 }
               />
@@ -70,6 +107,15 @@ const Restaurants = () => {
           ))}
         </div>
       </Swiper>
+
+      {/* <div className="pagination-buttons">
+        <button onClick={handlePrevPage} disabled={page === 1}>
+          Previous
+        </button>
+        <button onClick={handleNextPage} disabled={page === totalPages}>
+          Next
+        </button>
+      </div> */}
 
       <div className="all-restaurants">
         <span className="all-restaurants-text">All Restaurants</span>
