@@ -21,7 +21,8 @@ const Restaurants = () => {
   const [limit] = useState(3);
   const [totalPages] = useState(2);
   let { restaurants } = useFetchAllRestaurants(page, limit);
-  console.log(restaurants);
+  console.log("rests: ");
+  console.log(restaurants[0]);
 
   const handleNextPage = () => {
     if (page < totalPages) {
@@ -78,10 +79,11 @@ const Restaurants = () => {
                   <div>
                     <h2 className="chef-name">
                       {" "}
-                      {Array.isArray(restaurant.chefName) &&
+                      {restaurant.chefName?.title}
+                      {/* {Array.isArray(restaurant.chefName) &&
                       restaurant.chefName.length > 0
-                        ? restaurant.chefName[0]?.title
-                        : "Unknown Chef"}
+                        ? restaurant.chefName.title
+                        : "Unknown Chef"} */}
                     </h2>
                     {restaurant.rating && (
                       <>

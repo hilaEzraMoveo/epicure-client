@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { CardProps } from "../models/cardProp";
+import { Chef } from "../models/cardProp";
 
 const baseURL = "http://localhost:3002/api/v1";
 
@@ -14,11 +15,12 @@ export const useFetchAllRestaurants = (page: number, limit: number) => {
         const response = await axios.get(`${baseURL}/restaurants`, {
           params: { page, limit },
         });
+
         const resultRestaurantsList: CardProps[] = response.data.map(
           (element: {
             title: string;
             image: string;
-            chef: string;
+            chef: Chef;
             rating: number;
             isPopular: boolean;
             status: string;
@@ -31,7 +33,7 @@ export const useFetchAllRestaurants = (page: number, limit: number) => {
             status: element.status,
           })
         );
-        console.log(resultRestaurantsList);
+        console.log("restaurants" + resultRestaurantsList);
         setrRstaurants(resultRestaurantsList);
         // console.log(restaurants);
       } catch (error) {

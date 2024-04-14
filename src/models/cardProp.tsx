@@ -1,7 +1,7 @@
 export type CardProps = {
   title: string;
   image: string;
-  chefName?: string;
+  chefName?: Chef;
   restaurant?: string;
   restaurants?: Restaurant[];
   description?: string;
@@ -15,4 +15,8 @@ export type CardProps = {
 export type Restaurant = {
   title: string;
   image: string;
+};
+
+export type Chef = {
+  title: string;
 };
