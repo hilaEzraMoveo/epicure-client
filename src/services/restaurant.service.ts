@@ -3,7 +3,9 @@ import axios from "axios";
 import { CardProps } from "../models/cardProp";
 import { Chef } from "../models/cardProp";
 
-const baseURL = "http://localhost:3002/api/v1";
+//const baseURL = "http://localhost:3002/api/v1";
+const baseURL =
+  "http://ec2-13-49-21-96.eu-north-1.compute.amazonaws.com/api/v1";
 
 export const useFetchAllRestaurants = (page: number, limit: number) => {
   const [restaurants, setrRstaurants] = useState<CardProps[]>([]);
