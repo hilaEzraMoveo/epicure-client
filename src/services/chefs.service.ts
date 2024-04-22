@@ -4,7 +4,7 @@ import { CardProps } from "../models/cardProp";
 
 //const baseURL = "http://localhost:3002/api/v1";
 const baseURL =
-  "http://ec2-13-49-21-96.eu-north-1.compute.amazonaws.com/api/v1";
+  "http://ec2-13-48-178-147.eu-north-1.compute.amazonaws.com/api/v1";
 export const useFetchChefOfTheWeek = () => {
   const [chefOfTheWeek, setChefOfTheWeek] = useState<CardProps>();
 
