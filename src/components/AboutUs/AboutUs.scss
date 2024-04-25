@@ -1,155 +1,154 @@
-@import '../../styles/mixin.scss';
+@import "../../styles/mixin.scss";
 
-.about-us-container{
+.about-us-container {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0 48px 20px;
+  margin-top: 48px;
+  background: #fafafa;
+  @include desktop {
+    margin: 0;
+    padding: 40px 132px;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
 
-    display: flex;
-    flex-direction: column;
-    padding: 24px 0 48px 20px;
-    margin-top: 48px;
-    background: #FAFAFA;
+  .app-logo {
+    width: 102px;
+    height: 95px;
     @include desktop {
+      align-self: center;
+      display: flex;
+      justify-self: center;
+      margin-left: 200px;
+      width: 178.221px;
+      height: 166px;
+    }
+  }
+
+  .buttons-and-about-us {
+    @include desktop {
+      display: flex;
+      flex-direction: column-reverse;
+      width: 70%;
+      gap: 16px;
+    }
+
+    .apps-buttons {
+      display: flex;
+      flex-direction: column;
+      width: 180px;
+      margin-top: 32px;
+      gap: 16px;
+      @include desktop {
+        width: Hug (180px);
+        height: Hug (52px);
+        padding: 7px, 12px, 7px, 12px;
+        gap: 7px;
+        flex-direction: row;
+      }
+
+      .app-button {
+        width: 180px;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+      }
+
+      img {
+        margin: 10px 10px 10px 10px;
+        width: 25px;
+      }
+
+      .button-content-container {
+        display: flex;
+        flex-direction: column;
+        width: 130px;
+
+        .button-content-one {
+          font-family: Helvetica Neue;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 18px;
+          letter-spacing: 1.2899999618530273px;
+        }
+
+        .button-content-two {
+          font-family: Helvetica Neue;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 18px;
+          letter-spacing: 1.2899999618530273px;
+        }
+      }
+    }
+
+    .about-us-content-container {
+      margin-top: 48px;
+      text-align: left;
+      @include desktop {
         margin: 0;
-        padding: 40px 132px;
-        flex-direction: row-reverse;
-        justify-content: flex-end;
-    }
-    
-    .app-logo{
-        width: 102px;
-        height: 95px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .about-us-title {
+        font-family: "Helvetica Neue";
+        color: black;
+        line-height: normal;
+        font-weight: 200;
+        font-style: normal;
+        margin: 0px;
+        line-height: 35px;
+        text-transform: uppercase;
+        letter-spacing: 1.25px;
+        margin-bottom: 16px;
+        font-size: 18px;
         @include desktop {
-          align-self: center;
-          display: flex;
-          justify-self: center;
-          margin-left: 83.2px;
-          width: 178.221px;
-          height: 166px;
+          font-size: 30px;
+          letter-spacing: 2.14px;
+          margin-bottom: 0;
         }
-    }
+      }
 
-    .buttons-and-about-us{
+      .about-us-content-one {
+        font-family: "Helvetica Neue";
+        color: black;
+        line-height: normal;
+        font-weight: 200;
+        font-style: normal;
+        margin: 0px;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 2.14px;
+        padding-right: 25px;
         @include desktop {
-            display: flex;
-            flex-direction: column-reverse;
-            width: 70%;
-            gap: 16px;
-          }
-
-        .apps-buttons{
-            display: flex;
-            flex-direction: column;
-            width: 180px;
-            margin-top: 32px;
-            gap: 16px;
-            @include desktop {
-            width: Hug (180px);
-            height: Hug (52px);
-            padding: 7px, 12px, 7px, 12px;
-            gap: 7px;
-            flex-direction: row;
-            }
-
-            .app-button {
-                width: 180px;
-                display: flex;
-                align-items: center;
-                border-radius: 10px;
-            }
-
-            img{
-                margin: 10px 10px 10px 10px;
-                width: 25px;
-            }
-
-            .button-content-container{
-                display: flex;
-                flex-direction: column;
-                width: 130px;
-
-                .button-content-one{
-                    font-family: Helvetica Neue;
-                    font-size: 14px;
-                    font-weight: 400;
-                    line-height: 18px;
-                    letter-spacing: 1.2899999618530273px;
-                }
-    
-                .button-content-two{
-                    font-family: Helvetica Neue;
-                    font-size: 14px;
-                    font-weight: 400;
-                    line-height: 18px;
-                    letter-spacing: 1.2899999618530273px;
-                }
-
-            }
-
-
+          padding: 0;
+          font-size: 20px;
+          line-height: 35px;
+          width: 70%;
         }
-    
-        .about-us-content-container{
-            margin-top: 48px;
-            text-align: left;
-            @include desktop {
-              margin: 0;
-              display: flex;
-              flex-direction: column;
-              gap: 16px;
-            }
-       
-            .about-us-title{
-                font-family: "Helvetica Neue";
-                color: black;
-                line-height: normal;
-                font-weight: 200;
-                font-style: normal;
-                margin: 0px;
-                line-height: 35px;
-                text-transform: uppercase;
-                letter-spacing: 1.25px;
-                margin-bottom: 16px;
-                font-size: 18px;
-                @include desktop {
-                    font-size: 30px;
-                    letter-spacing: 2.14px;
-                    margin-bottom: 0;
-                }   
-            }
-    
-            .about-us-content-one{    
-                font-family: "Helvetica Neue";
-                color: black;
-                line-height: normal;
-                font-weight: 200;
-                font-style: normal;
-                margin: 0px;
-                font-size: 18px;
-                line-height: 28px;
-                letter-spacing: 2.14px;
-                padding-right: 25px;
-                @include desktop {
-                    padding: 0;
-                    font-size: 20px;
-                    line-height: 30px;
-                    width: 70%;
-                }
-            }
-    
-            .about-us-content-two{
-                font-family: "Helvetica Neue";
-                color: black;
-                line-height: normal;
-                font-weight: 200;
-                font-style: normal;
-                margin: 0px;
-                font-size: 18px;
-                line-height: 28px;
-                letter-spacing: 2.14px;
-                padding-right: 50px;
-                @include desktop {
-                  padding: 0;
-                }
-            }
+      }
+
+      .about-us-content-two {
+        font-family: "Helvetica Neue";
+        color: black;
+        line-height: normal;
+        font-weight: 200;
+        font-style: normal;
+        margin: 0px;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 2.14px;
+        padding-right: 50px;
+        @include desktop {
+          padding: 0;
+          width: 70%;
+          font-size: 20px;
+          line-height: 30px;
         }
+      }
     }
+  }
 }

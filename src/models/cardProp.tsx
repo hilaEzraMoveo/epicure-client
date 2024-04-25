@@ -2,7 +2,7 @@ export type CardProps = {
   title: string;
   image: string;
   chefName?: Chef;
-  restaurant?: string;
+  restaurant?: Restaurant;
   restaurants?: Restaurant[];
   description?: string;
   foodIcons?: string[];

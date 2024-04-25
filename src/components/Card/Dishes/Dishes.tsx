@@ -19,7 +19,8 @@ import {
 
 const Dishes = () => {
   const dishesList = useFetchAllDishes();
-  //console.log(dishesList);
+  console.log("dishes: ");
+  console.log(dishesList);
 
   return (
     <div className="dishes-container">
@@ -63,6 +64,11 @@ const Dishes = () => {
                 customTitleStyles={{ maxWidth: "200px", margin: "0 auto" }}
                 bottomComponent={
                   <div className="description-icon-price">
+                    {dish.restaurant && (
+                      <h1 className="restaurant-name">
+                        {"(" + dish.restaurant.title + ")"}
+                      </h1>
+                    )}
                     {dish.foodIcons &&
                       dish.foodIcons.map((icon, index) => {
                         const iconData = IconData.find(
